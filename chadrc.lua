@@ -19,6 +19,13 @@ M.plugins = {
         require "custom.plugins.null-ls"
       end,
     },
+
+    -- smooth scrolling
+    ["declancm/cinnamon.nvim"] = {
+      config = function()
+        require("cinnamon").setup()
+      end,
+    },
   },
 
   override = {
