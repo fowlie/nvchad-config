@@ -4,20 +4,19 @@ if not present then
    return
 end
 
-local b = null_ls.builtins
+-- For a complete list of all available builtins, check out:
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins
+
+local formatting = null_ls.builtins.formatting
 
 local sources = {
-
-   -- webdev stuff
-   b.formatting.prettier,
-
-   -- Lua
-   b.formatting.stylua,
+   formatting.gofmt,
+   formatting.prettier,
+   formatting.shfmt,
+   formatting.stylua,
 }
 
 null_ls.setup {
-   debug = true,
+   debug = false,
    sources = sources,
 }
-
-print("null-ls is configured!")

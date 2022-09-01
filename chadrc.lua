@@ -45,7 +45,6 @@ M.plugins = {
 
         -- go
         "gopls",
-        "goimports",
       },
     },
 
