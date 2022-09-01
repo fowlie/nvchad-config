@@ -4,6 +4,8 @@ M.ui = {
   theme = "vscode_dark",
 }
 
+M.mappings = require "custom.mappings"
+
 M.plugins = {
   user = {
     ["neovim/nvim-lspconfig"] = {
