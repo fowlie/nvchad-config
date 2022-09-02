@@ -28,6 +28,10 @@ M.plugins = {
         require("cinnamon").setup()
       end,
     },
+
+    ["folke/which-key.nvim"] = {
+      disable = false,
+    },
   },
 
   override = {
@@ -55,11 +59,6 @@ M.plugins = {
         -- go
         "gopls",
       },
-    },
-
-    -- Only load whichkey after all the gui
-    ["folke/which-key.nvim"] = {
-      disabled = true,
     },
   },
 }
