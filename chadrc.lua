@@ -22,6 +22,13 @@ M.plugins = {
       end,
     },
 
+    ["simrat39/symbols-outline.nvim"] = {
+      after = "nvim-lspconfig",
+      config = function()
+        require("symbols-outline").setup()
+      end,
+    },
+
     -- smooth scrolling
     ["declancm/cinnamon.nvim"] = {
       config = function()
