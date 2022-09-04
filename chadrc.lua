@@ -31,22 +31,33 @@ M.plugins = {
       end,
     },
 
-    -- required by neotest
-    ["antoinemadec/FixCursorHold.nvim"] = { },
+    -- fixes a bug in neovim (required by neotest, lightbulb)
+    ["antoinemadec/FixCursorHold.nvim"] = {},
+
+    ["kosayoda/nvim-lightbulb"] = {
+      after = "nvim-lspconfig",
+      requires = {
+        "antoinemadec/FixCursorHold.nvim",
+      },
+      config = function()
+        require "custom.plugins.nvim-lightbulb"
+      end,
+    },
 
     -- test runner
     ["nvim-neotest/neotest"] = {
       after = "nvim-lspconfig",
       requires = {
+        "antoinemadec/FixCursorHold.nvim",
         "nvim-neotest/neotest-go",
       },
       config = function()
-        require("neotest").setup({
+        require("neotest").setup {
           adapters = {
             require "neotest-go",
-          }
-        })
-      end
+          },
+        }
+      end,
     },
 
     -- smooth scrolling
