@@ -15,6 +15,7 @@ M.plugins = {
       end,
     },
 
+    -- in-memory lsp clients for diagnostics, code actions, etc.
     ["jose-elias-alvarez/null-ls.nvim"] = {
       after = "nvim-lspconfig",
       config = function()
@@ -22,11 +23,30 @@ M.plugins = {
       end,
     },
 
+    -- lsp symbols outline
     ["simrat39/symbols-outline.nvim"] = {
       after = "nvim-lspconfig",
       config = function()
         require("symbols-outline").setup()
       end,
+    },
+
+    -- required by neotest
+    ["antoinemadec/FixCursorHold.nvim"] = { },
+
+    -- test runner
+    ["nvim-neotest/neotest"] = {
+      after = "nvim-lspconfig",
+      requires = {
+        "nvim-neotest/neotest-go",
+      },
+      config = function()
+        require("neotest").setup({
+          adapters = {
+            require "neotest-go",
+          }
+        })
+      end
     },
 
     -- smooth scrolling
@@ -36,6 +56,7 @@ M.plugins = {
       end,
     },
 
+    -- enable default config
     ["folke/which-key.nvim"] = {
       disable = false,
     },
