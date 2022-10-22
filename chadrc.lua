@@ -1,7 +1,13 @@
 local M = {}
 
+-- https://nvchad.com/config/theming
 M.ui = {
-  theme = "vscode_dark",
+  theme = "decay",
+  hl_override = {
+    Normal = {
+      bg = "none" -- enable transparency
+    },
+  },
 }
 
 M.mappings = require "custom.mappings"
