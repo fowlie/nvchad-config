@@ -8,12 +8,16 @@ end
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins
 
 local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
-   formatting.gofmt,
-   formatting.prettier,
-   formatting.shfmt,
-   formatting.stylua,
+  formatting.gofmt,
+  formatting.prettier,
+  formatting.shfmt,
+  formatting.stylua,
+  formatting.fish_indent,
+  diagnostics.fish,
+  -- diagnostics.pylint,
 }
 
 null_ls.setup {
